@@ -19,15 +19,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#9DAD51',
   },
   taskWrapper: {
-
+    paddingTop: 100,
+    paddingHorizontal: 20,
   },
-  section: {
-
+  section: { //title
+    fontSize: 24,
+    fontWeight: 600,
   },
   items: {
-      
+
   },
 });

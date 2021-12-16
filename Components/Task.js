@@ -42,10 +42,15 @@ const styles = StyleSheet.create({
         marginRight: 15, //cannot be pushed to the right past this margin
     },
     itemText: {
-        
+        maxWidth: '80%', //limiting square dimensions
+
     },
     circle: {
-
+        width: 20,
+        height: 20,
+        borderColor: '#3267AB',
+        borderWidth: 2,
+        borderRadius: 10,
     },
 });
 

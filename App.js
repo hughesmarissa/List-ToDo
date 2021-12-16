@@ -8,11 +8,19 @@ export default function App() {
     //store user input tasks in array
     const [taskItems, setTaskItems] = useState([]);
 
-    const handleAddTask = () => {
+    //handle function
+    const handleAddTask = () => { 
         //console.log(task); //log task stored in the state
         setTaskItems([...taskItems, task]); //keeps exisiting tasks, then includes new task 
         setTask(''); //clears input area for new user input tasks
         Keyboard.dismiss();
+    }
+
+    //to delete todo tasks function
+    const completedTask = (index) => {
+        let itemsCopy = [...taskItems]; //takes in tasks arrays & store in itemsCopy
+        itemsCopy.splice(index, 1); //remove item from array, then store back in itemsCopy
+        setTaskItems(itemsCopy); //new itemsCopy array is stored in setTaskItems
     }
 
     return (
@@ -26,9 +34,17 @@ export default function App() {
               {/* tasks output */}
               {
                   taskItems.map((item, index) => {
-                      return <Task key={index} text={item} /> //returns user input tasks, use *key* from mapping
+                        return (
+                            <TouchableOpacity
+                                onPress={() => completedTask(index)} //pass in index to assure right task is deleted
+                                key={index}>
+                                {/* returns user input tasks, use *key* from mapping, move key to parent component */}
+                                <Task text={item} />
+                            </TouchableOpacity>
+                        )
+                      
                   })
-              }
+              } 
               {/* <Task text={"Task 1"} />
               <Task text={"Task 2"} />
               <Task text={"Task 3"} />

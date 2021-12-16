@@ -5,6 +5,7 @@ const Task = () => {
     return (
         <View>
             {/* tasks goes here */}
+            <Text>Task Testing</Text>
         </View>
     )
 }

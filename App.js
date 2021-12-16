@@ -10,7 +10,9 @@ export default function App() {
           <Text style={styles.section}>To-Do</Text>
           <View style={styles.items}>
               {/* tasks */}
-              <Task />
+              <Task text={"Task 1"} />
+              <Task text={"Task 2"} />
+              <Task text={"Task 3"} />
           </View>
       </View>
     </View>

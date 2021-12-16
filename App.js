@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput, Keyboard } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, TouchableOpacity, ScrollView, View, TextInput, Keyboard } from 'react-native';
 import Task from './Components/Task';
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
     <View style={styles.container}>
 
       {/* Tasks for Today */}
-      <View style={styles.taskWrapper}>
+      <ScrollView style={styles.taskWrapper}>
           <Text style={styles.section}>To-Do</Text>
 
           <View style={styles.items}>
@@ -52,7 +52,7 @@ export default function App() {
               <Task text={"Task 5"} /> */}
           </View>
 
-      </View>
+      </ScrollView>
 
         {/* write a task */}
         <KeyboardAvoidingView
@@ -83,12 +83,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#3267AB',
     },
     taskWrapper: {
-        paddingTop: 100,
+        paddingTop: 50,
         paddingHorizontal: 20,
     },
     section: { //title
         fontSize: 32,
-        fontWeight: '600',
+        fontWeight: '900',
+        color: 'white',
     },
     items: {
         marginTop: 25,
@@ -109,11 +110,12 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderColor: '#3267AB',
         borderWidth: 3,
+        fontSize: 22,
     },
     addWrapper: {
-        width: 65,
-        height: 65,
-        borderRadius: 60,
+        width: 80,
+        height: 80,
+        borderRadius: 50,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
@@ -121,6 +123,6 @@ const styles = StyleSheet.create({
         borderWidth: 3,
     },
     addText: {
-        
+        fontSize: 22,
     },
 });

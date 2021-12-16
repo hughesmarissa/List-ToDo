@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     },
     itemText: {
         maxWidth: '80%', //limiting square dimensions
-        fontSize: 32,
+        fontSize: 22,
+        fontStyle: 'italic',
     },
     circle: {
         width: 20,

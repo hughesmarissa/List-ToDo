@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
 import Task from './Components/Task';
 
 export default function App() {
-  return (
+    //create state
+    const [task, setTask] = useState(''); 
+
+    const handleAddTask = () => {
+        console.log(task); //log task stored in the state
+
+    }
+
+    return (
     <View style={styles.container}>
 
       {/* Tasks for Today */}
@@ -27,8 +35,14 @@ export default function App() {
             behavior={Platform.OS === 'ios' ? "padding" : "height"}
             style={styles.writeWrapper}
         >
-            <TextInput style={styles.input} placeholder={'Write a task'} />
-            <TouchableOpacity >
+            <TextInput 
+                style={styles.input} 
+                placeholder={'Write a task'} 
+                value={task} //set task to be new text/ sets the new state when onChangeText changes
+                onChangeText={text => setTask(text)} //every time text changes
+            />
+            {/* pass function to onPress */}
+            <TouchableOpacity onPress={() => handleAddTask()}> 
                 <View style={styles.addWrapper}>
                     <Text style={styles.addText}>+</Text>
                 </View>

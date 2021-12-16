@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput, Keyboard } from 'react-native';
 import Task from './Components/Task';
 
 export default function App() {
     //create state
     const [task, setTask] = useState(''); 
+    //store user input tasks in array
+    const [taskItems, setTaskItems] = useState([]);
 
     const handleAddTask = () => {
-        console.log(task); //log task stored in the state
-
+        //console.log(task); //log task stored in the state
+        setTaskItems([...taskItems, task]); //keeps exisiting tasks, then includes new task 
+        setTask(''); //clears input area for new user input tasks
+        Keyboard.dismiss();
     }
 
     return (
@@ -19,12 +23,17 @@ export default function App() {
           <Text style={styles.section}>To-Do</Text>
 
           <View style={styles.items}>
-              {/* tasks */}
-              <Task text={"Task 1"} />
+              {/* tasks output */}
+              {
+                  taskItems.map((item, index) => {
+                      return <Task key={index} text={item} /> //returns user input tasks, use *key* from mapping
+                  })
+              }
+              {/* <Task text={"Task 1"} />
               <Task text={"Task 2"} />
               <Task text={"Task 3"} />
               <Task text={"Task 4"} />
-              <Task text={"Task 5"} />
+              <Task text={"Task 5"} /> */}
           </View>
 
       </View>

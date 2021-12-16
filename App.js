@@ -6,6 +6,12 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* Tasks for Today */}
+      <View style={styles.taskWrapper}>
+          <Text style={styles.section}>To-Do</Text>
+          <View style={styles.items}>
+              {/* tasks */}
+          </View>
+      </View>
     </View>
   );
 }

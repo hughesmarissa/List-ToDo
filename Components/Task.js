@@ -21,7 +21,7 @@ const Task = (props) => {
 const styles = StyleSheet.create({
     item: {
         backgroundColor: 'white',
-        padding: 18,
+        padding: 20,
         borderRadius: 11,
         flexDirection: 'row',
         alignItems: 'center',
@@ -36,14 +36,14 @@ const styles = StyleSheet.create({
     square: {
         width: 26,
         height: 24,
-        backgroundColor: '#3267AB',
+        backgroundColor: '#253E5E',
         opacity: .6,
         borderRadius: 5,
         marginRight: 15, //cannot be pushed to the right past this margin
     },
     itemText: {
         maxWidth: '80%', //limiting square dimensions
-
+        fontSize: 32,
     },
     circle: {
         width: 20,

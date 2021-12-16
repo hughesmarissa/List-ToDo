@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         bottom: 60,
         width: '100%',
         flexDirection: 'row',
-        justifyContent: 'space-between', //will push left item left, right item right
+        justifyContent: 'space-around', //will keep  left/right separated with padding around
         alignItems: 'center',
     },
     input: {
@@ -70,10 +70,16 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderColor: '#3267AB',
         borderWidth: 3,
-        
     },
     addWrapper: {
-
+        width: 65,
+        height: 65,
+        borderRadius: 60,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: '#3267AB',
+        borderWidth: 3,
     },
     addText: {
         
